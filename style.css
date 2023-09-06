@@ -92,6 +92,10 @@ header.shadow {
   z-index: 10001;
   display: none;
 }
+#darkmode {
+  font-size: 22px;
+  cursor: pointer;
+}
 .home {
   position: relative;
   width: 100%;
@@ -435,6 +439,11 @@ form textarea {
     padding: 1.5rem;
     display: block;
     background: var(--bg-color);
+  }
+  #darkmode {
+    position: absolute;
+    top: 1.4rem;
+    right: 2rem;
   }
   .scroll-down {
     display: none;
