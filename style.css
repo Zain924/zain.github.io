@@ -111,6 +111,7 @@ header.shadow {
 .home-img img {
   width: 100%;
   border-radius: 0.7rem;
+  box-shadow: 0 10px 20px rgba(37, 36, 36, 0.295); /* Add shadow */
 }
 .home-text span {
   font-size: var(--medium-font);
@@ -156,38 +157,49 @@ header.shadow {
   background: var(--hover);
   background-color: red;
 }
- 
+
+/* About */
+
 
 .about-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-  margin-left: 3rem;
-  margin-right: 1rem;
+  margin-top: 40px;
+  width: fit-content;
+  background: linear-gradient(to left, rgba(61, 230, 204, 0.478), white);
+  padding: 30px;
+  border-radius: 10px;
 }
- 
-.about-img img {
-  width: 80%;
-  border-radius: 0.5rem;
+.about-text p {
+  position: relative;
+  left: -100%; /* Off-screen initially */
+
+  /* Animation */
+  animation: slideFromLeft 2s ease forwards; /* Adjust duration and timing function as needed */
+}
+
+/* Keyframes for the animation */
+@keyframes slideFromLeft {
+  0% {
+    left: -100%; /* Start off-screen to the left */
+  }
+  100% {
+    left: 0; /* Slide in to the center */
+  }
 }
 .about-text p {
   font-size: 30px;
-  font-weight: 400;
-  margin-right: 5rem;
+  font-weight: 300;
   text-align: justify;
-}
-.info-box {
-  margin-top: 1rem;
 }
 .information {
   margin: 1rem 0 1.4rem;
 }
 .information .info-box {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   margin-bottom: 1.4rem;
 }
+
 .information .info-box .bx {
   font-size: 22px;
 }
@@ -195,6 +207,11 @@ header.shadow {
   font-weight: 400;
   margin-left: 1rem;
 }
+
+
+/* Skills  */
+
+
 .skills-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -231,7 +248,7 @@ span {
   left: 0;
   width: 100%;
   height: 0.5rem;
-  background: hsla(260, 100%, 44%, 0.4);
+  background: hsla(260, 75%, 58%, 0.4);
   border-radius: 0.5rem;
 }
 .percent-bar {
@@ -242,18 +259,58 @@ span {
   background: var(--main-color);
   border-radius: 0.5rem;
 }
+
+.left-bars{
+  position: relative;
+  left: -100%;
+  animation: slideFromLeft 2s ease forwards;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.right-bars{
+  position: relative;
+  right: -100%;
+  animation: slideFromRight 2s ease forwards;
+}
+
+@keyframes slideFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
 .html-bar {
   width: 94%;
 }
 .css-bar {
-  width: 84%;
-}
-.js-bar {
-  width: 74%;
-}
-.django-bar {
   width: 80%;
 }
+.js-bar {
+  width: 45%;
+}
+.git-bar{
+  width: 70%;
+}
+.orm-bar{
+  width: 80%;
+}
+.django-bar {
+  width: 75%;
+}
+
+/* Services */
+
+
 .services-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -300,24 +357,95 @@ span {
 .services-box:hover a{
   color: #8b8a8f;
 }
-.portfolio-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-  gap: 1rem;
+
+/* Projects */
+
+
+.card {
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-header {
+  background: linear-gradient(to bottom, rgba(61, 230, 204, 0.478), white);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.h5 {
+  font-size: x-large;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+
+/* Education */
+
+.education-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 1rem; */
   margin-top: 2rem;
 }
-.portfolio-img {
-  overflow: hidden;
-  border-radius: 0.5rem;
+
+.education-card {
+  width: 25rem;
+  border: 1px  rgba(61, 230, 204, 0.478);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-right: 20px; /* Add space between cards */
+  box-shadow: 0 10px 20px rgba(61, 230, 205, 0.363); /* Add shadow */
+  text-align: center;
 }
-.portfolio-img img {
-  width: 100%;
-  display: block;
+
+.education-card-body {
+  padding: 1.25rem;
 }
-.portfolio-img img:hover {
-  transform: scale(1.1);
-  transition: 1s;
+
+.education-card-title {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
+
+.education-card-subtitle {
+  font-size: 1.25rem;
+  color: #6c757d; /* Secondary text color */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.education-card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.education-card-link {
+  color: #007bff; /* Primary link color */
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.education-card-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Contact */
+
 .contact-form {
   display: grid;
   place-items: center;
@@ -449,7 +577,7 @@ form textarea {
     display: none;
   }
   .home {
-    grid-template-columns: 0.5fr 3fr;
+    grid-template-columns: 0.3fr 3fr;
   }
   .home-text {
     grid-column: 1/3;
@@ -460,10 +588,12 @@ form textarea {
   }
   .about-container {
     grid-template-columns: 1fr;
+    margin: auto;
   }
-  .about-img {
-    display: flex;
-    justify-content: center;
+  .about-text p {
+    font-size: 20px;
+    text-align: justify;
+    margin: auto;
   }
   .skills-container {
     grid-template-columns: 1fr;
@@ -494,6 +624,14 @@ form textarea {
   .home-text h2 {
     font-size: 0.9rem;
     font-weight: 500;
+  }
+  .about-container {
+    margin: auto;
+  }
+  .about-text p {
+    font-size: 20px;
+    text-align: justify;
+    margin: auto;
   }
   .information .info-box span {
     font-size: 1rem;
