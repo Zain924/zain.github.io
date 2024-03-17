@@ -401,7 +401,7 @@ span {
 }
 
 .education-card {
-  width: 25rem;
+  width: 28rem;
   border: 1px  rgba(61, 230, 204, 0.478);
   border-radius: 8px;
   margin-bottom: 20px;
@@ -422,7 +422,7 @@ span {
 
 .education-card-subtitle {
   font-size: 1.25rem;
-  color: #6c757d; /* Secondary text color */
+  color: #3580c2a2; /* Secondary text color */
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -433,7 +433,7 @@ span {
 }
 
 .education-card-link {
-  color: #007bff; /* Primary link color */
+  color: #d724ddd3; /* Primary link color */
   text-decoration: none;
   margin-right: 10px;
 }
